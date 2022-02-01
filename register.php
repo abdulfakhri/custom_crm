@@ -1,23 +1,17 @@
 <?php
+
+include('config.php');
+
 if(isset($_POST['signup'])) {
     
-  $databaseHost = 'localhost';
-  $databaseName = 'crm_steve';
-  $databaseUsername ='root';
-  $databasePassword ='root';
+ 
 
   $name = $_POST['name'];
 	$username = $_POST['username'];
   $email = $_POST['email'];
 	$phone = $_POST['phone'];
 	$pass = $_POST['password'];
-	
-//Create connection
-$conn = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-// Check connection
-if (!$conn) {
-    die("Connection failed: ".mysqli_connect_error());
-}
+
 		
 $sql="INSERT INTO crm_user(name,username,email,phone,password) VALUES('$name','$username','$email','$phone','$pass')";
 			
